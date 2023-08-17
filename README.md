@@ -4,17 +4,35 @@ Jersey City Demolitions 2018-2022: Part II
 Sarah Ligon ([@ligonish](https://github.com/ligonish))  
 November 6, 2022
 
+In the middle of 2022 — the same year Jersey City reported [demolishing
+more housing units than any municipality in New
+Jersey](https://www.nj.gov/dca/divisions/codes/reporter/2021yearly/DEMO_21.pdf)
+— the *New York Times* declared it “the [most expensive city in which to
+rent a home in the United
+States](https://www.nytimes.com/2022/07/28/realestate/which-city-is-most-expensive-for-renters-you-might-be-surprised.html)”.
+
+This second installment in a three-part series, originally written for
+Lucy Block & Oksana Miranova’s “Spatial Analysis & Data Visualization”
+grad course at NYU, investigates patterns in the housing demolitions
+Jersey City administrators have approved in the five years since New
+Jersey began digitizing municipal construction permit records.
+
 Full write-up of this analysis appears in [“Whose House is Jersey City
 Tearing Down? Part 2 of
 3”.](https://medium.com/@srligon/whose-house-is-jersey-city-tearing-down-part-ii-3212b1514d6f)
+
+See also [Part
+1](https://medium.com/@srligon/whose-house-is-jersey-city-tearing-down-c1092cdbbc43)
+& [Part
+3](https://medium.com/@srligon/whose-house-is-jersey-city-tearing-down-903cdeaa6c6a).
 
 ### Data Sources
 
 - [NJOIT Open Data Center, NJ Construction Permit
   Data](https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra)
 - [Rutgers University + NJ Dep’t of Community Affairs, N.J. MOD-IV
-  Historical Database](http://modiv.rutgers.edu) See R Project
-  “Codebook_Documentation” folder for detailed variable descriptions.
+  Historical Database](http://modiv.rutgers.edu) (See “documentation”
+  folder for detailed variable descriptions)
 - [2018 International Building Code, New Jersey
   Edition](https://codes.iccsafe.org/content/NJBC2018P2/chapter-3-occupancy-classification-and-use#NJBC2018P2_Ch03_Sec310)
 - [Zillow Home Value Index (ZHVI) Condo/Co-op
@@ -435,8 +453,8 @@ res_spread %>%
   geom_point(size = 4, color = c("dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "#21918c", "#21918c", "#21918c", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey", "dimgrey")) +
   labs (x = NULL,
         y = "Total JC-approved parcel demolitions, 2018-2022",
-        title = "How Had People Used the Buildings Jersey City Approved for Demolition in 2018-2022?",
-        subtitle = "Jersey City has the highest building teardown rate in NJ. Most of those buildings used to be housing.",
+        title = "How Had People Been Using the Buildings Jersey City \nApproved for Demolition in 2018-2022?",
+        subtitle = "Jersey City has the highest building teardown rate in NJ. Most were housing.",
         caption = "Source: NJ Construction Permit Data retrieved 11/06/2022 via NJOIT Open Data Center.")+
   coord_flip() +
   geom_text(aes(label = demos), 
@@ -571,7 +589,7 @@ plot_2 %>%
 anim_save("plots/plot_2_annual_animated.gif")
 ```
 
-### Plot 3
+#### Plot 3
 
 Here’s a summary-table df setting up total parcels demolished in each
 ZIP code.
@@ -605,7 +623,7 @@ plot_3 %>%
   )+
   labs (x = "ZIP Code",
         y = "Estimated residential units approved for demolition by City of Jersey City, 2018-2022",
-        title = "The Heights Lost the Most Housing Units to City-Approved Demolitions, 2018-2022",
+        title = "The Heights Lost the Most Housing Units to City-Approved Demolitions.",
         subtitle = "Journal Square and the West Side weren't far behind. Waterfront ZIPs lost the fewest units over the last five years.",
         caption = "Source: NJ Construction Permit Data retrieved 11/06/2022 via NJOIT Open Data Center; Jersey City \nproperty tax records retrieved 11/06/2022 via N.J. MOD-IV Historical Database.")+
   coord_flip() +
